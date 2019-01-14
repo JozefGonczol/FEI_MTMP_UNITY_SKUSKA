@@ -17,4 +17,9 @@ public class GameOver : MonoBehaviour {
     public void nextLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void selectLevel(int levelNumber) {
+        SceneManager.LoadScene(levelNumber);
+    }
+
 }
