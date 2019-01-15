@@ -101,7 +101,19 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Fuel"))
+        {
+            other.gameObject.SetActive(false);
+            fuel += 10;
+            if (fuel > 100)
+                fuel = 100;
+            setFuelText();
+        }
+    }
+
     private void setFuelText() {
-        text.SetText("Fuel: " + fuel.ToString());
+        text.SetText("Fuel: " + ((int)fuel).ToString());
     }
 }
